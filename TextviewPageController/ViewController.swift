@@ -26,6 +26,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         for text in texts {
             let contentVC = PageContentViewController()
             contentVC.text = text
+            contentVC.view.backgroundColor = .blue
             pages.append(contentVC)
         }
 
@@ -42,10 +43,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         // UIPageViewControllerのレイアウト設定
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            pageViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            pageViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            pageViewController.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            pageViewController.view.heightAnchor.constraint(equalToConstant: 315),
+            pageViewController.view.widthAnchor.constraint(equalToConstant: 315),
         ])
     }
 

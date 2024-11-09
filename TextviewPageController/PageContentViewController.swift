@@ -22,16 +22,17 @@ class PageContentViewController: UIViewController {
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.textAlignment = .center
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .red
         
         // UITextViewをViewに追加
         view.addSubview(textView)
 
         // レイアウト設定
         NSLayoutConstraint.activate([
-            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            textView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textView.topAnchor.constraint(equalTo: view.topAnchor),
+            textView.heightAnchor.constraint(equalToConstant: 315),
+            textView.widthAnchor.constraint(equalToConstant: 315),
         ])
     }
 }
